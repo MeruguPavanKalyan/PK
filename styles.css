@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeaa7; /* Light yellow background */
+    color: #2d3436; /* Dark gray text color */
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fab1a0; /* Light coral container background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #d63031; /* Dark coral heading color */
+}
+
+p {
+    color: #636e72; /* Gray paragraph text color */
+}
+
+button {
+    background-color: #fdcb6e; /* Mustard button background color */
+    color: #2d3436;
+    border: 2px solid #fdcb6e; /* Mustard button border color */
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e17055; /* Darker salmon button background color on hover */
+    color: #2d3436;
+}
+
+#heartShower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #d63031; /* Dark coral heart color */
+    transform: translate(-50%, -50%);
+    animation: fall 1s linear infinite;
+    border-radius: 50%;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #d63031; /* Dark coral heart color */
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, 100vh);
+        opacity: 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        margin: 20px;
+    }
